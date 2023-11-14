@@ -36,28 +36,28 @@ router.post("/login", async (req, res) => {
   }
 });
 //google authentication
-router.get(
-  "/auth/google",
-  passport.authenticate("google", {
-    scope: ["profile", "email"],
-    prompt: "consent",
-  }),
-);
-router.get("/auth/google/callback", (req, res, next) => {
-  passport.authenticate("google", (err, data) => {
-    if (err) {
-      return res.redirect(`/failure`);
-    }
-    if (data.successRedirect) {
-      return res.redirect(data.successRedirect);
-    }
-    if (data.failureRedirect) {
-      return res.redirect(data.failureRedirect);
-    }
-    return res.redirect(`${process.env.FRONTEND_URL}/failure`);
-  })(req, res, next);
-});
-
+// router.get(
+//   "/auth/google",
+//   passport.authenticate("google", {
+//     scope: ["profile", "email"],
+//     prompt: "consent",
+//   }),
+// );
+// router.get("/auth/google/callback", (req, res, next) => {
+//   passport.authenticate("google", (err, data) => {
+//     if (err) {
+//       return res.redirect(`/failure`);
+//     }
+//     if (data.successRedirect) {
+//       return res.redirect(data.successRedirect);
+//     }
+//     if (data.failureRedirect) {
+//       return res.redirect(data.failureRedirect);
+//     }
+//     return res.redirect(`${process.env.FRONTEND_URL}/failure`);
+//   })(req, res, next);
+// });
+//
 router.post("/register", async (req, res) => {
   try {
     const { mail, password, username } = req.body;

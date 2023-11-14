@@ -46,9 +46,6 @@ function Login() {
       });
     }
   }
-  function googleLoginHandler() {
-    window.open(`${API_LINK}/user/auth/google`, "_self")
-  }
 
   if (loading) {
     return <section className="loadingScreen">
@@ -69,12 +66,6 @@ function Login() {
       </div>
       <p>{error}</p>
       <button type='submit'>Log In</button>
-      <div className="google-btn" onClick={googleLoginHandler}>
-        <div className="google-icon-wrapper">
-          <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-        </div>
-        <p className="btn-text"><b>Sign in with Google</b></p>
-      </div>
       <h5>Not signed up yet ? <Link style={{ textDecoration: "none" }} to="/register">Register</Link></h5>
     </form >
   </section>
