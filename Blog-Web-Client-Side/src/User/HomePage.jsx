@@ -159,21 +159,14 @@ export default function HomePage() {
     <section style={{ width: "100%" }}>
       <Header />
       <form
-        className="postsContainer"
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "row",
-          columnGap: "10px",
-        }}
+        className="postsSearch"
         onSubmit={searchHandler}
       >
-        <h1>Search Posts: </h1>
+        <h3>Search Posts: </h3>
         <input
           type="text"
           name="search"
           id=""
-          style={{ width: "300px" }}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search Posts (By Name)"
