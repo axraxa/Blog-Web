@@ -53,6 +53,8 @@ export default function Create() {
             return;
           }
         });
+    }else{
+      alert("You need to fill both fields and upload image , what's blog without it? :)")
     }
   }
   if (loading) {
