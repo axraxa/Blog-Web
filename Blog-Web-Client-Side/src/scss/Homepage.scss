@@ -104,8 +104,13 @@ section {
           height: 50px;
           border-radius: 50%;
         }
-        input[type="text"] {
-          flex: 1;
+          input[type="text"] {
+            flex: 1;
+          }
+        @media(max-width:500px){
+          input[type="text"] {
+           width: 60%; 
+          }
         }
       }
     }
