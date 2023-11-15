@@ -24,7 +24,9 @@ export default function Create() {
     e.preventDefault();
     if (name && file && story || name && story) {
       const form = new FormData();
-      form.append("file", file);
+      if(file){
+        form.append("file", file);
+      }
       form.append("name", name);
       form.append("story", story);
       axios.post(`${API_LINK}/story/create`,
