@@ -101,7 +101,7 @@ router.post("/create", async (req, res) => {
           return res.status(400).json({ msg: err.message });
         }
         const { name, story } = req.body;
-        if (!req.files) {
+        if (!req.files[0].path) {
           const newStory = new Story({
             name: name,
             story: story,
