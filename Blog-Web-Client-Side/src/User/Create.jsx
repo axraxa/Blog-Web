@@ -22,7 +22,7 @@ export default function Create() {
 
   function submitStory(e) {
     e.preventDefault();
-    if (name && file && story) {
+    if (name && file && story || name && story) {
       const form = new FormData();
       form.append("file", file);
       form.append("name", name);
