@@ -22,7 +22,7 @@ export default function Create() {
 
   function submitStory(e) {
     e.preventDefault();
-    if ((name && file && story) || (name && story)) {
+    if ((name && file && story) ) {
       const form = new FormData();
       form.append("file", file);
       form.append("name", name);
@@ -36,14 +36,14 @@ export default function Create() {
         })
         .then((res) => {
           if (res.data?.msg) {
-            setError(err.response.data.msg);
+            setError(res.response.data.msg);
             setFile("");
             return;
           }
           setFile("");
           setName("");
           setStory("");
-          alert("You posted it successfuly");
+          alert(res.data.success);
           navigate("/home");
         })
         .catch((err) => {

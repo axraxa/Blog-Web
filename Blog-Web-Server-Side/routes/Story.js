@@ -102,18 +102,9 @@ router.post("/create", async (req, res) => {
         }
         const { name, story } = req.body;
         if (!req.files[0].path) {
-          const newStory = new Story({
-            name: name,
-            story: story,
-            author: decoded.user._id,
-          });
-          newStory.save();
-          const user = await User.findById(decoded.user._id);
-          user.stories.push(newStory);
-          user.save();
           return res
-            .status(200)
-            .json({ success: "Your post successfuly uploaded" });
+            .status(404)
+            .json({ msg: "You need to upload image too, what's blog without it :)" });
         }
         const newStory = new Story({
           name: name,
