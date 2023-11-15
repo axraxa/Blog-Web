@@ -176,7 +176,9 @@ export default function HomePage() {
           style={{ width: "300px" }}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          placeholder="Search Posts (By Name)"
         />
+        <button type="submit">Search</button>
       </form>
       <main
         className="postsContainer"

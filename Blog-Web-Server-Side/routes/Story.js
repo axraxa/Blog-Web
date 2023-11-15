@@ -101,7 +101,7 @@ router.post("/create", async (req, res) => {
           return res.status(400).json({ msg: err.message });
         }
         const { name, story } = req.body;
-        if (!req.files[0].path) {
+        if (!req.files) {
           return res
             .status(404)
             .json({ msg: "You need to upload image too, what's blog without it :)" });
